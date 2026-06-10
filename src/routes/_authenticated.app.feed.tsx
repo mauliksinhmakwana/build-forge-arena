@@ -47,10 +47,17 @@ function Feed() {
 
   useEffect(() => {
     load();
-    const ch = supabase.channel("feed-posts").on("postgres_changes", { event: "INSERT", schema: "public", table: "posts" }, () => load()).subscribe();
-    const cv = supabase.channel("feed-votes").on("postgres_changes", { event: "*", schema: "public", table: "post_votes" }, () => load()).subscribe();
-    return () => { supabase.removeChannel(ch); supabase.removeChannel(cv); };
-  }, [user?.id]);
+    const ch = supabase.channel("feed-realtime")
+      .on("postgres_changes", { event: "*", schema: "public", table: "posts" }, () => load())
+      .on("postgres_changes", { event: "*", schema: "public", table: "post_votes" }, () => load())
+      .on("postgres_changes", { event: "*", schema: "public", table: "post_comments" }, (payload) => {
+        const postId = (payload.new as { post_id?: string } | null)?.post_id ?? (payload.old as { post_id?: string } | null)?.post_id;
+        if (postId && openComments === postId) loadComments(postId);
+        load();
+      })
+      .subscribe();
+    return () => { supabase.removeChannel(ch); };
+  }, [user?.id, openComments]);
 
   async function like(id: string) {
     if (!user) return;

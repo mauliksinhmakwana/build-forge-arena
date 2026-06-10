@@ -2,7 +2,7 @@ import { createFileRoute, Outlet, Link, useNavigate, useRouterState } from "@tan
 import { useEffect, useState } from "react";
 import {
   LayoutDashboard, User, Sparkles, Lightbulb, Users, MessageCircle, Hash,
-  BookOpen, Trophy, Award, Shield, LogOut, Menu, X, Flame, Zap, Rss, Target
+  BookOpen, Trophy, Award, Shield, LogOut, Menu, X, Flame, Zap, Rss, Target, History as HistoryIcon
 } from "lucide-react";
 import { useAuth } from "@/lib/auth-context";
 import { useIsAdmin } from "@/lib/use-role";
@@ -16,8 +16,8 @@ export const Route = createFileRoute("/_authenticated/app")({
 });
 
 const NAV = [
-  { to: "/app/dashboard", label: "Dashboard", icon: LayoutDashboard },
   { to: "/app/feed", label: "Feed", icon: Rss },
+  { to: "/app/dashboard", label: "Dashboard", icon: LayoutDashboard },
   { to: "/app/showcase", label: "Showcase", icon: Sparkles },
   { to: "/app/ideas", label: "Post Idea", icon: Lightbulb },
   { to: "/app/challenges", label: "Challenges", icon: Target },
@@ -27,6 +27,15 @@ const NAV = [
   { to: "/app/resources", label: "Resources", icon: BookOpen },
   { to: "/app/leaderboard", label: "Leaderboard", icon: Trophy },
   { to: "/app/hall", label: "Hall of Fame", icon: Award },
+  { to: "/app/history", label: "History", icon: HistoryIcon },
+  { to: "/app/profile", label: "Profile", icon: User },
+] as const;
+
+const BOTTOM_NAV = [
+  { to: "/app/feed", label: "Feed", icon: Rss },
+  { to: "/app/ideas", label: "Ideas", icon: Lightbulb },
+  { to: "/app/challenges", label: "Challenges", icon: Target },
+  { to: "/app/messages", label: "Messages", icon: MessageCircle },
   { to: "/app/profile", label: "Profile", icon: User },
 ] as const;
 
@@ -75,7 +84,7 @@ function AppShell() {
 
       <div className="flex-1 flex flex-col min-w-0">
         <header className="sticky top-0 z-40 glass-strong border-b border-border px-4 sm:px-6 py-3 flex items-center justify-between gap-3">
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-3 min-w-0">
             <button className="md:hidden p-2 -ml-2" onClick={() => setMobileOpen(true)} aria-label="Open menu">
               <Menu className="h-5 w-5" />
             </button>
@@ -95,10 +104,26 @@ function AppShell() {
             </Link>
           </div>
         </header>
-        <main className="flex-1 p-4 sm:p-6 lg:p-8 max-w-7xl w-full mx-auto">
+        <main className="flex-1 p-4 sm:p-6 lg:p-8 max-w-7xl w-full mx-auto pb-24 md:pb-8">
           <Outlet />
         </main>
       </div>
+
+      {/* Mobile bottom nav */}
+      <nav className="md:hidden fixed bottom-0 inset-x-0 z-40 glass-strong border-t border-border flex justify-around py-2 px-2 pb-[env(safe-area-inset-bottom)]">
+        {BOTTOM_NAV.map((it) => {
+          const Icon = it.icon;
+          const active = pathname === it.to || pathname.startsWith(it.to + "/");
+          return (
+            <Link key={it.to} to={it.to as never}
+              className={cn("flex flex-col items-center gap-0.5 px-3 py-1.5 rounded-lg transition-colors min-w-0 flex-1",
+                active ? "text-primary" : "text-muted-foreground")}>
+              <Icon className="h-5 w-5" />
+              <span className="text-[10px] font-medium truncate">{it.label}</span>
+            </Link>
+          );
+        })}
+      </nav>
     </div>
   );
 }

@@ -57,10 +57,21 @@ export function Navbar() {
               </>
             )}
           </div>
-          <button className="md:hidden text-foreground p-2" onClick={() => setOpen((o) => !o)} aria-label="Toggle menu">
-            {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-          </button>
-        </nav>
+          <div className="md:hidden flex items-center gap-2">
+            {user && (
+              <Button variant="hero" size="sm" onClick={() => navigate({ to: "/app/feed" })}>
+                Open panel
+              </Button>
+            )}
+            {!user && !loading && (
+              <Button variant="hero" size="sm" onClick={() => navigate({ to: "/auth" })}>
+                Join
+              </Button>
+            )}
+            <button className="text-foreground p-2" onClick={() => setOpen((o) => !o)} aria-label="Toggle menu">
+              {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+            </button>
+          </div>
         {open && (
           <div className="md:hidden mt-2 backdrop-blur-2xl bg-background/60 border border-border/40 rounded-2xl p-4 flex flex-col gap-3 animate-fade-up">
             {links.map((l) => (

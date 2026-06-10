@@ -72,6 +72,7 @@ export function Navbar() {
               {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
             </button>
           </div>
+        </nav>
         {open && (
           <div className="md:hidden mt-2 backdrop-blur-2xl bg-background/60 border border-border/40 rounded-2xl p-4 flex flex-col gap-3 animate-fade-up">
             {links.map((l) => (
@@ -82,7 +83,7 @@ export function Navbar() {
             <div className="flex flex-col gap-2 pt-2 border-t border-border">
               {user ? (
                 <>
-                  <Button variant="hero" size="sm" onClick={() => { setOpen(false); navigate({ to: "/app/dashboard" }); }}>
+                  <Button variant="hero" size="sm" onClick={() => { setOpen(false); navigate({ to: "/app/feed" }); }}>
                     Open panel
                   </Button>
                   <Button variant="ghost" size="sm" onClick={signOut}>

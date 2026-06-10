@@ -4,7 +4,7 @@ import { supabase } from "@/integrations/supabase/client";
 import { useIsAdmin } from "@/lib/use-role";
 import { Shield } from "lucide-react";
 
-export const Route = createFileRoute("/_authenticated/app/admin")({
+export const Route = createFileRoute("/_authenticated/app/admin/")({
   component: Admin,
 });
 

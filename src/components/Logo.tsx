@@ -17,7 +17,7 @@ export function Logo({ size = "md", glow = true }: { size?: Size; glow?: boolean
       )}
       <img
         src={logo.url}
-        alt="FounderForge"
+        alt="BuildVerse"
         className={`relative ${cls} rounded-full object-cover ring-1 ring-white/10`}
       />
     </span>

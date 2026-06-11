@@ -11,7 +11,7 @@ export function Footer() {
           </span>
         </div>
         <p className="text-xs text-muted-foreground">
-          © {new Date().getFullYear()} FounderForge. Where founders are forged.
+          © {new Date().getFullYear()} BuildVerse. Where founders are forged.
         </p>
       </div>
     </footer>

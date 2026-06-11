@@ -1,6 +1,6 @@
 const testimonials = [
   {
-    quote: "FounderForge replaced three different communities for me. Build in public + co-founder matching in one place is unreal.",
+    quote: "BuildVerse replaced three different communities for me. Build in public + co-founder matching in one place is unreal.",
     name: "Jordan Reyes", role: "Founder, Plume AI", initials: "JR",
   },
   {

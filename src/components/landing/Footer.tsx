@@ -7,11 +7,11 @@ export function Footer() {
         <div className="flex items-center gap-2">
           <Logo size="sm" glow={false} />
           <span className="font-display font-bold tracking-tight">
-            Founder<span className="text-primary">Forge</span>
+            <span>Build<span className="text-primary">Verse</span></span>
           </span>
         </div>
         <p className="text-xs text-muted-foreground">
-          © {new Date().getFullYear()} FounderForge. Where founders are forged.
+          © {new Date().getFullYear()} BuildVerse. Build · Ship · Connect.
         </p>
       </div>
     </footer>

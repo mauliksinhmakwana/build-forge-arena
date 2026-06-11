@@ -8,17 +8,14 @@ const SIZE: Record<Size, string> = {
   lg: "h-9 w-9",
 };
 
-export function Logo({ size = "md", glow = true }: { size?: Size; glow?: boolean }) {
+export function Logo({ size = "md" }: { size?: Size; glow?: boolean }) {
   const cls = SIZE[size];
   return (
-    <span className={`relative inline-flex ${cls}`}>
-      {glow && (
-        <span className="absolute inset-0 rounded-full bg-primary blur-md opacity-60 group-hover:opacity-100 transition-opacity" />
-      )}
+    <span className={`inline-flex ${cls}`}>
       <img
         src={logo.url}
-        alt="FounderForge"
-        className={`relative ${cls} rounded-full object-cover ring-1 ring-white/10`}
+        alt="BuildVerse"
+        className={`${cls} rounded-full object-cover`}
       />
     </span>
   );

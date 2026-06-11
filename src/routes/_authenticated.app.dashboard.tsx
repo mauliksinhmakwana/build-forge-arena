@@ -42,7 +42,7 @@ function Dashboard() {
     <div className="space-y-8">
       <div>
         <h1 className="font-display text-3xl font-bold">Hey, {profile?.display_name?.split(" ")[0] || "founder"} 👋</h1>
-        <p className="text-muted-foreground mt-1">Here's what's happening in the Forge today.</p>
+        <p className="text-muted-foreground mt-1">Here's what's happening on BuildVerse today.</p>
       </div>
 
       <div className="grid sm:grid-cols-3 gap-4">

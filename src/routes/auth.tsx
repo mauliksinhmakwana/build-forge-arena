@@ -90,13 +90,13 @@ function AuthPage() {
         <Link to="/" className="flex items-center justify-center gap-2 mb-8 group">
           <Logo size="lg" />
           <span className="font-display font-bold text-xl">
-            Founder<span className="text-primary">Forge</span>
+            <span>Build<span className="text-primary">Verse</span></span>
           </span>
         </Link>
 
         <div className="glass-strong rounded-2xl p-6 sm:p-8 shadow-elegant">
           <h1 className="font-display text-2xl font-bold text-center">
-            {mode === "signup" ? "Join the Forge" : mode === "forgot" ? "Reset password" : "Welcome back"}
+            {mode === "signup" ? "Join BuildVerse" : mode === "forgot" ? "Reset password" : "Welcome back"}
           </h1>
           <p className="text-sm text-muted-foreground text-center mt-1">
             {mode === "signup"

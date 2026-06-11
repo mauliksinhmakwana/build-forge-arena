@@ -72,7 +72,7 @@ function EmptyState() {
         The leaderboard is live and updates in real time. Create an account to start earning XP and building your streak.
       </p>
       <Link to="/auth">
-        <Button variant="hero" size="lg">Join the Forge</Button>
+        <Button variant="hero" size="lg">Join BuildVerse</Button>
       </Link>
     </div>
   );

@@ -48,7 +48,7 @@ function Inbox() {
           {matches.map((m) => (
             <Link key={m.other_id} to="/app/messages/$userId" params={{ userId: m.other_id }} className="glass rounded-xl p-3 flex items-center gap-3 hover:bg-card/70 transition">
               <div className="h-10 w-10 rounded-full gradient-primary flex items-center justify-center overflow-hidden text-xs font-bold">
-                {m.avatar_url ? <img src={m.avatar_url} alt="" className="h-full w-full object-cover" /> : (m.display_name ?? "?").slice(0,2).toUpperCase()}
+                {m.avatar_url ? <img src={m.avatar_url} alt="" className="h-full w-full object-cover" /> : (m.display_name ?? "?").slice(0,1).toUpperCase()}
               </div>
               <div className="font-medium">{m.display_name}</div>
             </Link>

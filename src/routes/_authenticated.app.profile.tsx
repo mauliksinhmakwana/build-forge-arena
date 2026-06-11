@@ -37,7 +37,7 @@ function Profile() {
       <div className="flex items-start justify-between gap-4">
         <div className="flex items-center gap-4">
           <div className="h-20 w-20 rounded-full gradient-primary flex items-center justify-center overflow-hidden text-xl font-bold">
-            {p.avatar_url ? <img src={p.avatar_url} alt="" className="h-full w-full object-cover" /> : (p.display_name ?? "?").slice(0,2).toUpperCase()}
+            {p.avatar_url ? <img src={p.avatar_url} alt="" className="h-full w-full object-cover" /> : (p.display_name ?? "?").slice(0,1).toUpperCase()}
           </div>
           <div>
             <h1 className="font-display text-3xl font-bold">{p.display_name}</h1>

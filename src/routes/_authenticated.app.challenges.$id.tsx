@@ -66,7 +66,7 @@ function ChallengeDetail() {
           {members.map((m) => (
             <div key={m.id} className="flex items-center gap-2 glass rounded-full px-3 py-1.5">
               <div className="h-7 w-7 rounded-full gradient-primary flex items-center justify-center overflow-hidden text-[10px] font-bold">
-                {m.avatar_url ? <img src={m.avatar_url} alt="" className="h-full w-full object-cover" /> : (m.display_name ?? "?").slice(0,2).toUpperCase()}
+                {m.avatar_url ? <img src={m.avatar_url} alt="" className="h-full w-full object-cover" /> : (m.display_name ?? "?").slice(0,1).toUpperCase()}
               </div>
               <span className="text-sm">{m.display_name}</span>
             </div>

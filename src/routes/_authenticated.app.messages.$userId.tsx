@@ -53,7 +53,7 @@ function Thread() {
     <div className="flex flex-col h-[calc(100vh-10rem)]">
       <div className="glass-strong rounded-t-2xl p-3 flex items-center gap-3 border-b border-border">
         <div className="h-9 w-9 rounded-full gradient-primary flex items-center justify-center overflow-hidden text-xs font-bold">
-          {other?.avatar_url ? <img src={other.avatar_url} alt="" className="h-full w-full object-cover" /> : (other?.display_name ?? "?").slice(0,2).toUpperCase()}
+          {other?.avatar_url ? <img src={other.avatar_url} alt="" className="h-full w-full object-cover" /> : (other?.display_name ?? "?").slice(0,1).toUpperCase()}
         </div>
         <div className="font-semibold">{other?.display_name}</div>
       </div>

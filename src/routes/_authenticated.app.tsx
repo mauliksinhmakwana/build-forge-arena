@@ -64,7 +64,7 @@ function AppShell() {
   }
 
   const items = isAdmin ? [...NAV, { to: "/app/admin" as const, label: "Admin", icon: Shield }] : NAV;
-  const initials = (me?.display_name || user?.email || "?").slice(0, 2).toUpperCase();
+  const initials = (me?.display_name || user?.email || "?").slice(0, 1).toUpperCase();
 
   return (
     <div className="min-h-screen flex bg-background text-foreground">

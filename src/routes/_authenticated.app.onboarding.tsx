@@ -97,7 +97,7 @@ function Onboarding() {
       <form onSubmit={save} className="mt-8 space-y-6 glass-strong rounded-2xl p-6">
         <div className="flex items-center gap-4">
           <div className="h-20 w-20 rounded-full gradient-primary flex items-center justify-center overflow-hidden">
-            {form.avatar_url ? <img src={form.avatar_url} className="h-full w-full object-cover" alt="" /> : <span className="font-bold text-primary-foreground text-xl">{(form.display_name || "?").slice(0,2).toUpperCase()}</span>}
+            {form.avatar_url ? <img src={form.avatar_url} className="h-full w-full object-cover" alt="" /> : <span className="font-bold text-primary-foreground text-xl">{(form.display_name || "?").slice(0,1).toUpperCase()}</span>}
           </div>
           <div>
             <Label htmlFor="avatar">Profile picture</Label>

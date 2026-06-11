@@ -98,7 +98,7 @@ function Feed() {
           <article key={p.id} className="glass-strong rounded-2xl overflow-hidden">
             <header className="flex items-center gap-3 p-4">
               <div className="h-10 w-10 rounded-full gradient-primary flex items-center justify-center overflow-hidden text-xs font-bold flex-shrink-0">
-                {u?.avatar_url ? <img src={u.avatar_url} alt="" className="h-full w-full object-cover" /> : (u?.display_name ?? "?").slice(0,2).toUpperCase()}
+                {u?.avatar_url ? <img src={u.avatar_url} alt="" className="h-full w-full object-cover" /> : (u?.display_name ?? "?").slice(0,1).toUpperCase()}
               </div>
               <div className="flex-1 min-w-0">
                 <div className="font-semibold text-sm">{u?.display_name ?? "User"}</div>

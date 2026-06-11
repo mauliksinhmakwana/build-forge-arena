@@ -84,7 +84,7 @@ function Ideas() {
             <div className="flex items-center justify-between gap-3 mb-3">
               <div className="flex items-center gap-3">
                 <div className="h-9 w-9 rounded-full gradient-primary flex items-center justify-center overflow-hidden text-xs font-bold">
-                  {i.profiles?.avatar_url ? <img src={i.profiles.avatar_url} alt="" className="h-full w-full object-cover" /> : (i.profiles?.display_name ?? "?").slice(0,2).toUpperCase()}
+                  {i.profiles?.avatar_url ? <img src={i.profiles.avatar_url} alt="" className="h-full w-full object-cover" /> : (i.profiles?.display_name ?? "?").slice(0,1).toUpperCase()}
                 </div>
                 <div className="text-sm">{i.profiles?.display_name ?? "Anon"}</div>
               </div>

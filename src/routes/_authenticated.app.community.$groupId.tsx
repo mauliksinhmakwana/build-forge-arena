@@ -92,7 +92,7 @@ function GroupChat() {
           return (
             <div key={m.id} className="flex gap-2.5">
               <div className="h-8 w-8 rounded-full gradient-primary flex-shrink-0 flex items-center justify-center overflow-hidden text-[10px] font-bold">
-                {p?.avatar_url ? <img src={p.avatar_url} alt="" className="h-full w-full object-cover" /> : (p?.display_name ?? "?").slice(0,2).toUpperCase()}
+                {p?.avatar_url ? <img src={p.avatar_url} alt="" className="h-full w-full object-cover" /> : (p?.display_name ?? "?").slice(0,1).toUpperCase()}
               </div>
               <div className="flex-1 min-w-0">
                 <div className="text-xs text-muted-foreground flex items-baseline gap-2">

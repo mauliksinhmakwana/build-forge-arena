@@ -32,7 +32,7 @@ function Leaderboard() {
           <div key={p.id} className="flex items-center gap-3 p-3 border-b border-border last:border-0">
             <div className={cn("w-8 text-center font-display font-bold", i < 3 ? "text-primary text-lg" : "text-muted-foreground")}>{i + 1}</div>
             <div className="h-9 w-9 rounded-full gradient-primary flex items-center justify-center overflow-hidden text-xs font-bold">
-              {p.avatar_url ? <img src={p.avatar_url} alt="" className="h-full w-full object-cover" /> : (p.display_name ?? "?").slice(0,2).toUpperCase()}
+              {p.avatar_url ? <img src={p.avatar_url} alt="" className="h-full w-full object-cover" /> : (p.display_name ?? "?").slice(0,1).toUpperCase()}
             </div>
             <div className="flex-1 min-w-0 font-medium truncate">{p.display_name ?? "Anon"}</div>
             <div className="flex items-center gap-3 text-sm">

@@ -20,5 +20,5 @@ export async function signedUrl(bucket: string, path: string, expiresIn = 60 * 6
 }
 
 export function initials(name?: string | null) {
-  return (name || "?").trim().slice(0, 2).toUpperCase();
+  return (name || "?").trim().slice(0, 1).toUpperCase();
 }

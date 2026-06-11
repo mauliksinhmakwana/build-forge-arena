@@ -75,7 +75,7 @@ function Cofounders() {
           <div key={m.id} className="glass-strong rounded-2xl p-5">
             <div className="flex items-start gap-3">
               <div className="h-12 w-12 rounded-full gradient-primary flex items-center justify-center overflow-hidden font-bold">
-                {m.avatar_url ? <img src={m.avatar_url} className="h-full w-full object-cover" alt="" /> : (m.display_name ?? "?").slice(0,2).toUpperCase()}
+                {m.avatar_url ? <img src={m.avatar_url} className="h-full w-full object-cover" alt="" /> : (m.display_name ?? "?").slice(0,1).toUpperCase()}
               </div>
               <div className="flex-1 min-w-0">
                 <div className="font-semibold truncate">{m.display_name}</div>

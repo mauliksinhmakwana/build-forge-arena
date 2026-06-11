@@ -130,7 +130,7 @@ function AdminChallenges() {
                 <button key={r.id} onClick={() => setOpenReq(r)} className={cn("w-full text-left glass-strong rounded-xl p-3 hover:bg-card/70", openReq?.id === r.id && "ring-2 ring-primary")}>
                   <div className="flex items-center gap-2">
                     <div className="h-7 w-7 rounded-full gradient-primary flex items-center justify-center overflow-hidden text-[10px] font-bold flex-shrink-0">
-                      {p?.avatar_url ? <img src={p.avatar_url} alt="" className="h-full w-full object-cover" /> : (p?.display_name ?? "?").slice(0,2).toUpperCase()}
+                      {p?.avatar_url ? <img src={p.avatar_url} alt="" className="h-full w-full object-cover" /> : (p?.display_name ?? "?").slice(0,1).toUpperCase()}
                     </div>
                     <div className="flex-1 min-w-0">
                       <div className="font-semibold text-sm truncate">{r.title}</div>
